@@ -1,0 +1,416 @@
+[{
+    "w_id": 1,
+    "date_from": "2008-12-02T05:00:00.000Z",
+    "date_to": "2013-08-31T04:00:00.000Z",
+    "company_name": "VWR International, LLC",
+    "title": "On-site Coordinator",
+    "location": "Vancouver, B.C.",
+    "r_id": null,
+    "dept": "Sales Department"
+}, {
+    "w_id": 2,
+    "date_from": "2008-07-02T04:00:00.000Z",
+    "date_to": "2013-08-31T04:00:00.000Z",
+    "company_name": "University of British Columbia ",
+    "title": "Operations Assistant",
+    "location": "Vancouver, B.C.",
+    "r_id": null,
+    "dept": "ICORD"
+}, {
+    "w_id": 3,
+    "date_from": "2012-02-01T05:00:00.000Z",
+    "date_to": "2015-04-09T04:00:00.000Z",
+    "company_name": "SP Pacific Consulting",
+    "title": "Regulated Canadian Immigration Consultant",
+    "location": "Vancouver, B.C.",
+    "r_id": null,
+    "dept": null
+}, {
+    "w_id": 4,
+    "date_from": "2012-01-02T05:00:00.000Z",
+    "date_to": "2015-04-09T04:00:00.000Z",
+    "company_name": "B. Nguyen Immigration Consulting",
+    "title": "Regulated Canadian Immigration Consultant",
+    "location": "Vancouver, B.C.",
+    "r_id": null,
+    "dept": null
+}, {
+    "w_id": 5,
+    "date_from": "2014-09-02T04:00:00.000Z",
+    "date_to": null,
+    "company_name": "Groundswell Cloud Solutions",
+    "title": "Developer",
+    "location": "Vancouver, B.C.",
+    "r_id": null,
+    "dept": null
+}], [{
+    "wd_id": 1,
+    "description": "Advising clients and their families on different immigration options",
+    "w_id": 4
+}, {
+    "wd_id": 2,
+    "description": "Completing and submitting applications to Citizenship and Immigration Canada",
+    "w_id": 4
+}, {
+    "wd_id": 3,
+    "description": "Completed over 15 cases to date with a ~90% success rate",
+    "w_id": 4
+}, {
+    "wd_id": 4,
+    "description": "Completed over 40 cases to date with a ~90% success rate",
+    "w_id": 3
+}, {
+    "wd_id": 5,
+    "description": "Maintained VoIP telephone system for the department using Cisco Unified Communications Manager",
+    "w_id": 2
+}, {
+    "wd_id": 6,
+    "description": "Served on building safety committee for 3 years, chaired for 5 months",
+    "w_id": 2
+}, {
+    "wd_id": 7,
+    "description": "Created a database in Excel for over 100 pieces of equipment in the building",
+    "w_id": 2
+}, {
+    "wd_id": 8,
+    "description": "Supervised events held by external organizations that took place in the building",
+    "w_id": 2
+}, {
+    "wd_id": 9,
+    "description": "Managed store room of laboratory supplies for labs in the VGH area",
+    "w_id": 1
+}, {
+    "wd_id": 10,
+    "description": "Aided customers with supply order inquiries and pricing issues",
+    "w_id": 1
+}, {
+    "wd_id": 11,
+    "description": "Organized annual supplier trade shows for the local area",
+    "w_id": 1
+}, {
+    "wd_id": 12,
+    "description": "Developing websites and cloud applications for various clients on the Salesforce platform",
+    "w_id": 5
+}, {
+    "wd_id": 13,
+    "description": "Using Apex, Visualforce, Javascript to develop dynamic content for both internal and external use for by the client, and by our own company",
+    "w_id": 5
+}, {
+    "wd_id": 14,
+    "description": "Thoroughly testing each component we create by ensuring all test cases cover >75% of our code",
+    "w_id": 5
+}], [{
+    "e_id": 1,
+    "date_from": "2004-09-02T04:00:00.000Z",
+    "date_to": "2008-05-31T04:00:00.000Z",
+    "school_name": "University of British Columbia",
+    "program": "B.Sc. Major in Cell Biology and Genetics, Minor in Commerce",
+    "location": "Vancouver, B.C.",
+    "r_id": null
+}, {
+    "e_id": 2,
+    "date_from": "2010-09-02T04:00:00.000Z",
+    "date_to": "2011-05-31T04:00:00.000Z",
+    "school_name": "University of British Columbia",
+    "program": "Certificate in Immigration: Laws, Policies and Procedures",
+    "location": "Vancouver, B.C.",
+    "r_id": null
+}, {
+    "e_id": 3,
+    "date_from": "2013-09-02T04:00:00.000Z",
+    "date_to": null,
+    "school_name": "University of British Columbia",
+    "program": "BCS – Bachelor of Computer Science",
+    "location": "Vancouver, B.C.",
+    "r_id": null
+}], [{
+    "sm_name": "C/C++"
+}, {
+    "sm_name": "Concepts"
+}, {
+    "sm_name": "CSS"
+}, {
+    "sm_name": "HTML"
+}, {
+    "sm_name": "Java"
+}, {
+    "sm_name": "Javascript"
+}, {
+    "sm_name": "PHP"
+}, {
+    "sm_name": "Relational Databases"
+}, {
+    "sm_name": "Salesforce"
+}, {
+    "sm_name": "Tools"
+}], [{
+    "s_name": "Agile",
+    "sm_name": "Concepts",
+    "rating": 0.6
+}, {
+    "s_name": "Android SDK",
+    "sm_name": "Java",
+    "rating": 0.25
+}, {
+    "s_name": "AngularJS",
+    "sm_name": "Javascript",
+    "rating": 0.7
+}, {
+    "s_name": "Apex",
+    "sm_name": "Salesforce",
+    "rating": 0.75
+}, {
+    "s_name": "Bootstrap",
+    "sm_name": "CSS",
+    "rating": 0.8
+}, {
+    "s_name": "C/C++",
+    "sm_name": "C/C++",
+    "rating": 0.5
+}, {
+    "s_name": "CSS",
+    "sm_name": "CSS",
+    "rating": 0.8
+}, {
+    "s_name": "Eclipse",
+    "sm_name": "Tools",
+    "rating": 0.75
+}, {
+    "s_name": "Foundation",
+    "sm_name": "CSS",
+    "rating": 0.8
+}, {
+    "s_name": "Git",
+    "sm_name": "Tools",
+    "rating": 0.6
+}, {
+    "s_name": "GWT",
+    "sm_name": "Java",
+    "rating": 0.6
+}, {
+    "s_name": "HTML",
+    "sm_name": "HTML",
+    "rating": 0.8
+}, {
+    "s_name": "Java",
+    "sm_name": "Java",
+    "rating": 0.75
+}, {
+    "s_name": "Javascript",
+    "sm_name": "Javascript",
+    "rating": 0.8
+}, {
+    "s_name": "jQuery",
+    "sm_name": "Javascript",
+    "rating": 0.8
+}, {
+    "s_name": "JUnit",
+    "sm_name": "Java",
+    "rating": 0.5
+}, {
+    "s_name": "MySQL",
+    "sm_name": "Relational Databases",
+    "rating": 0.7
+}, {
+    "s_name": "Node.js",
+    "sm_name": "Javascript",
+    "rating": 0.65
+}, {
+    "s_name": "NoSQL",
+    "sm_name": "Relational Databases",
+    "rating": 0.6
+}, {
+    "s_name": "Object Oriented Programming",
+    "sm_name": "Concepts",
+    "rating": 0.8
+}, {
+    "s_name": "Oracle SQL*Plus",
+    "sm_name": "Relational Databases",
+    "rating": 0.7
+}, {
+    "s_name": "Parse",
+    "sm_name": "Relational Databases",
+    "rating": 0.4
+}, {
+    "s_name": "PHP",
+    "sm_name": "PHP",
+    "rating": 0.6
+}, {
+    "s_name": "Salesforce",
+    "sm_name": "Salesforce",
+    "rating": 0.75
+}, {
+    "s_name": "SOQL",
+    "sm_name": "Salesforce",
+    "rating": 0.75
+}, {
+    "s_name": "SQL",
+    "sm_name": "Relational Databases",
+    "rating": 0.75
+}, {
+    "s_name": "Sublime Text",
+    "sm_name": "Tools",
+    "rating": 0.7
+}], [{
+    "h_id": 1,
+    "description": "Enjoy reading the latest news in science and technology by reading various blogs",
+    "r_id": null
+}, {
+    "h_id": 2,
+    "description": "Modifying, fixing, disassembling electronics",
+    "r_id": null
+}, {
+    "h_id": 3,
+    "description": "Enjoy an active lifestyle by playing volleyball, squash, and many outdoor activities such as hiking and camping",
+    "r_id": null
+}], [{
+    "p_id": 4,
+    "s_name": "Agile"
+}, {
+    "p_id": 6,
+    "s_name": "Agile"
+}, {
+    "p_id": 3,
+    "s_name": "Android SDK"
+}, {
+    "p_id": 8,
+    "s_name": "Android SDK"
+}, {
+    "p_id": 7,
+    "s_name": "AngularJS"
+}, {
+    "p_id": 8,
+    "s_name": "AngularJS"
+}, {
+    "p_id": 5,
+    "s_name": "Bootstrap"
+}, {
+    "p_id": 6,
+    "s_name": "Bootstrap"
+}, {
+    "p_id": 7,
+    "s_name": "Bootstrap"
+}, {
+    "p_id": 5,
+    "s_name": "CSS"
+}, {
+    "p_id": 6,
+    "s_name": "CSS"
+}, {
+    "p_id": 7,
+    "s_name": "CSS"
+}, {
+    "p_id": 8,
+    "s_name": "CSS"
+}, {
+    "p_id": 1,
+    "s_name": "Eclipse"
+}, {
+    "p_id": 2,
+    "s_name": "Eclipse"
+}, {
+    "p_id": 3,
+    "s_name": "Eclipse"
+}, {
+    "p_id": 4,
+    "s_name": "Eclipse"
+}, {
+    "p_id": 5,
+    "s_name": "Eclipse"
+}, {
+    "p_id": 6,
+    "s_name": "Eclipse"
+}, {
+    "p_id": 7,
+    "s_name": "Foundation"
+}, {
+    "p_id": 8,
+    "s_name": "Foundation"
+}, {
+    "p_id": 4,
+    "s_name": "Git"
+}, {
+    "p_id": 6,
+    "s_name": "Git"
+}, {
+    "p_id": 7,
+    "s_name": "Git"
+}, {
+    "p_id": 4,
+    "s_name": "GWT"
+}, {
+    "p_id": 5,
+    "s_name": "GWT"
+}, {
+    "p_id": 5,
+    "s_name": "HTML"
+}, {
+    "p_id": 6,
+    "s_name": "HTML"
+}, {
+    "p_id": 7,
+    "s_name": "HTML"
+}, {
+    "p_id": 8,
+    "s_name": "HTML"
+}, {
+    "p_id": 1,
+    "s_name": "Java"
+}, {
+    "p_id": 2,
+    "s_name": "Java"
+}, {
+    "p_id": 3,
+    "s_name": "Java"
+}, {
+    "p_id": 4,
+    "s_name": "Java"
+}, {
+    "p_id": 5,
+    "s_name": "Java"
+}, {
+    "p_id": 7,
+    "s_name": "Javascript"
+}, {
+    "p_id": 8,
+    "s_name": "Javascript"
+}, {
+    "p_id": 1,
+    "s_name": "JUnit"
+}, {
+    "p_id": 3,
+    "s_name": "JUnit"
+}, {
+    "p_id": 4,
+    "s_name": "JUnit"
+}, {
+    "p_id": 7,
+    "s_name": "MySQL"
+}, {
+    "p_id": 7,
+    "s_name": "Node.js"
+}, {
+    "p_id": 8,
+    "s_name": "Node.js"
+}, {
+    "p_id": 8,
+    "s_name": "NoSQL"
+}, {
+    "p_id": 3,
+    "s_name": "Object Oriented Programming"
+}, {
+    "p_id": 4,
+    "s_name": "Object Oriented Programming"
+}, {
+    "p_id": 6,
+    "s_name": "Oracle SQL*Plus "
+}, {
+    "p_id": 6,
+    "s_name": "PHP"
+}, {
+    "p_id": 6,
+    "s_name": "SQL"
+}, {
+    "p_id": 7,
+    "s_name": "SQL"
+}]
