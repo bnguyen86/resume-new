@@ -1,0 +1,490 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"res",
+				"res"
+			],
+			[
+				"filter",
+				"filterArr"
+			],
+			[
+				"skills",
+				"skillsArr"
+			],
+			[
+				"skill",
+				"skillsArr"
+			],
+			[
+				"margin",
+				"margin-right"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 2219,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/app.js",
+			"settings":
+			{
+				"buffer_size": 4727,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/main.css",
+			"settings":
+			{
+				"buffer_size": 8036,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html lang=\"en\" ng-app=\"resumeApp\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>Resume | Benjamin Nguyen</title>\n    <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n    <link href=\"css/font-awesome.css\" rel=\"stylesheet\">\n    <link href=\"css/main.css\" rel=\"stylesheet\">\n    <!--[if lt IE 9]>\n      <script src=\"js/html5shiv.js\"></script>\n      <script src=\"js/respond.min.js\"></script>\n    <![endif]-->\n    <script>\n    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n\n    ga('create', 'UA-57440701-1', 'auto');\n    ga('send', 'pageview');\n\n  </script>\n  </head>\n  <body ng-cloak>\n  <nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\">\n  <div class=\"container-fluid\">\n    <!-- Brand and toggle get grouped for better mobile display -->\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"http://ben-nguyen.com\"><img class=\"img-responsive\" src=\"img/logo.svg\" alt=\"avatar\" width=\"44px\" height=\"44px\"></a>\n    </div>\n\n    <!-- Collect the nav links, forms, and other content for toggling -->\n    <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\n      <ul class=\"nav navbar-nav\">\n        <li><a href=\"#\" onclick=\"scrollToAnchor('#about-me')\">About</a></li>\n        <li><a href=\"#\" onclick=\"scrollToAnchor('#projects')\">Projects</a></li>\n        <li><a href=\"#\" onclick=\"scrollToAnchor('#work')\">Work Experience</a></li>\n        <li><a href=\"#\" onclick=\"scrollToAnchor('#school')\">Education</a></li>\n        <li><a href=\"#\" onclick=\"scrollToAnchor('#skills')\">Skills</a></li>\n        <li><a href=\"#\" onclick=\"scrollToAnchor('#contact')\">Contact</a></li>\n      </ul>\n    </div><!-- /.navbar-collapse -->\n  </div><!-- /.container-fluid -->\n</nav>\n    <div class=\"container\" style=\"padding-top: 50px\">\n      <div class=\"row\">\n        <div class=\"col-xs-12\">\n          <div id=\"photo-header\" class=\"text-center\">\n            <!-- PHOTO (AVATAR) -->\n            <div id=\"photo\">\n              <img src=\"img/logo.svg\" alt=\"avatar\">\n            </div>\n            <div id=\"text-header\">\n              <h1>Benjamin D. Nguyen\n              <br><br>This is my <span>resume</span></h1>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col-xs-12 col-sm-8\">\n          <!-- ABOUT ME -->\n          <div class=\"box\" id=\"about-me\">\n            <h2>About Me</h2>\n            <p>I am a developer from Vancouver, BC. I am currently working on a Bachelor of Computer Science (BCS) at the University of British Columbia. I also have a Bachelor of Science (BSc.) from the University of British Columbia with major in Cell Biology and Genetics and a minor in Commerce.</p>\n          </div>\n          <!-- PROJECTS -->\n          <div class=\"box\" ng-controller=\"projectsController\" id=\"projects\">\n            <h2>Projects</h2>\n  \n            <div class=\"dropdown pull-right\">\n              <a id=\"fLabel\" data-target=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" role=\"button\" aria-expanded=\"false\">\n                 Sort By <i class=\"fa fa-caret-down\"></i></span>\n              </a>\n\n              <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"fLabel\">\n                <li ng-class=\"{active:p_sortVar=='p_name'}\">\n                  <a ng-href=\"\" ng-click=\"p_sortVar='p_name'\" ng-init=\"p_sortVar='p_date'\">Name</a>\n                </li>\n                <li ng-class=\"{active:p_sortVar=='purpose'}\">\n                  <a ng-href=\"\" ng-click=\"p_sortVar='purpose'\">Type</a>\n                </li>               \n                <li ng-class=\"{active:p_sortVar=='p_date'}\">\n                  <a ng-href=\"\" ng-click=\"p_sortVar='p_date'\">Date</a>\n                </li>\n              </ul>\n              <a ng-href=\"\" ng-click=\"p_order=false\" ng-init=\"p_order=true\">\n                <i class=\"fa fa-sort-amount-asc\"></i> \n              </a>\n              <a ng-href=\"\" ng-click=\"p_order=true\">\n                <i class=\"fa fa-sort-amount-desc\"></i> \n              </a>\n            </div>\n\n            <div class=\"dropdown pull-left\">\n              <a id=\"dLabel\" data-target=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" role=\"button\" aria-expanded=\"false\">\n                 Filter by Skill <i class=\"fa fa-caret-down\"></i></span>\n              </a>\n\n              <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"dLabel\" style=\"padding: 10px\">\n                  <li ng-repeat=\"s in p_skills | unique:'s_name'\">\n                    <input type=\"checkbox\" ng-model=\"skillTF\" ng-change=\"filterBySkill(s.s_name)\"> {{s.s_name}}\n                  </li>\n              </ul>\n            </div>\n            <br>\n            <div class=\"job clearfix\" ng-repeat=\"project in projects | orderBy:p_sortVar:reverse=p_order | filter: {filtered:true}\">\n              <div class=\"col-xs-3\">\n                <div class=\"where\">{{project.purpose}}</div>\n                <div class=\"year\">{{project.p_date | date:'MMMM, yyyy'}}</div>\n              </div>\n              <div class=\"col-xs-9\">\n                <div class=\"profession\">{{project.p_name}}</div>\n                <div class=\"description\">\n                  <ul class=\"fa-ul\">\n                    <li class=\"hover\" ng-repeat=\"detail in p_details | filter:{p_id:project.p_id}\" data-stopPropagation=\"true\">\n                      <i class=\"fa-li fa fa-angle-right\"></i>{{detail.description}}\n                    </li>\n                  </ul>                  \n                </div>\n              </div>\n              <div class=\"col-xs-9\">\n                    <span ng-repeat=\"skill in project.skills\" class=\"label label-default\">\n                      {{skill}}\n                    </span>\n              </div>\n            </div>\n\n          <!-- WORK EXPERIENCE -->\n          <div class=\"box\" ng-controller=\"workController\" id=\"work\">\n            <h2>Work Experience</h2>\n            <div class=\"dropdown pull-right\">\n              <a id=\"dLabel\" data-target=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" role=\"button\" aria-expanded=\"false\">\n                 Sort By <i class=\"fa fa-caret-down\"></i></span>\n              </a>\n\n              <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"dLabel\">\n                <li ng-class=\"{active:w_sortVar=='company_name'}\">\n                  <a ng-href=\"\" ng-click=\"w_sortVar='company_name'\" ng-init=\"w_sortVar='date_from'\">Company</a>\n                </li>\n                <li ng-class=\"{active:w_sortVar=='date_from'}\">\n                  <a ng-href=\"\" ng-click=\"w_sortVar='date_from'\">Start Date</a>\n                </li>\n                <li>\n                  <a ng-href=\"\" ng-click=\"w_sortVar='date_to'\">End Date</a>\n                </li ng-class=\"{active:w_sortVar=='date_to'}\">\n              </ul>\n              <a ng-href=\"\" ng-click=\"w_order=false\" ng-init=\"w_order=true\">\n                <i class=\"fa fa-sort-amount-asc\"></i>\n              </a>\n              <a ng-href=\"\" ng-click=\"w_order=true\">\n                <i class=\"fa fa-sort-amount-desc\"></i> \n              </a>\n            </div>\n            <div class=\"job clearfix\" ng-repeat=\"w in work | orderBy:w_sortVar:reverse=w_order\">\n              <div class=\"col-xs-3\">\n                <div class=\"where\">{{w.company_name}}</div>\n                <div class=\"year\">{{w.date_from | date:'MMMM, yyyy'}} to {{w.date_to | date:'MMMM, yyyy' | nullToPresent }}</div>\n              </div>\n              <div class=\"col-xs-9\">\n                <div class=\"profession\">{{w.title}}</div>\n                <div class=\"description\">\n                  <ul class=\"fa-ul\">\n                    <li class=\"hover\" ng-repeat=\"detail in w_details | filter:{w_id:w.w_id}\">\n                      <i class=\"fa-li fa fa-angle-right\"></i>{{detail.description}}\n                    </li>\n                  </ul>\n                </div>\n              </div>\n            </div>\n          </div>\n          </div>\n\n          <!-- EDUCATION -->\n          <div class=\"box\" ng-controller=\"educationController\" id=\"school\">\n            <h2>Education</h2>\n            <div class=\"dropdown pull-right\">\n              <a id=\"dLabel\" data-target=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" role=\"button\" aria-expanded=\"false\">\n                 Sort By <i class=\"fa fa-caret-down\"></i></span>\n              </a>\n\n              <ul class=\"dropdown-menu\" role=\"menu\" aria-labelledby=\"dLabel\">\n                <li ng-class=\"{active:w_sortVar=='company_name'}\">\n                  <a ng-href=\"\" ng-click=\"w_sortVar='company_name'\" ng-init=\"w_sortVar='date_from'\">Company</a>\n                </li>\n                <li ng-class=\"{active:w_sortVar=='date_from'}\">\n                  <a ng-href=\"\" ng-click=\"w_sortVar='date_from'\">Start Date</a>\n                </li>\n                <li>\n                  <a ng-href=\"\" ng-click=\"w_sortVar='date_to'\">End Date</a>\n                </li ng-class=\"{active:w_sortVar=='date_to'}\">\n              </ul>\n              <a ng-href=\"\" ng-click=\"e_order=false\" ng-init=\"e_order=true\">\n                <i class=\"fa fa-sort-amount-asc\"></i>\n              </a>\n              <a ng-href=\"\" ng-click=\"e_order=true\">\n                <i class=\"fa fa-sort-amount-desc\"></i>\n              </a>\n            </div>\n            <div class=\"job clearfix\" ng-repeat=\"e in edu | orderBy:e_sortVar:reverse=e_order\">\n              <div class=\"col-xs-3\">\n                <div class=\"where\">{{e.date_from | date:'MMM, yyyy'}} to {{e.date_to | date:'MMM, yyyy' | nullToPresent }}</div>\n                <div class=\"year\">{{e.location}}</div>                \n              </div>\n              <div class=\"col-xs-9\">\n                <div class=\"profession\">{{e.school_name}}</div>\n                <div class=\"description\">{{e.program}}</div>\n                <div class=\"description\">\n                  <ul class=\"fa-ul\">\n                    <li class=\"hover\" ng-repeat=\"detail in e_details\">\n                      <i class=\"fa-li fa fa-angle-right\"></i>{{detail}}\n                    </li>\n                  </ul> \n                </div>\n              </div>\n            </div>\n          </div>\n\n        </div>\n        <div class=\"col-xs-12 col-sm-4\">\n          <!-- CONTACT -->\n          <div class=\"box clearfix\" id=\"contact\">\n            <h2>Contact</h2>\n            <div class=\"contact-item\">\n              <div class=\"icon pull-left text-center map\"><span class=\"fa fa-map-marker fa-fw\"></span></div>\n              <div class=\"title only pull-right\">Vancouver, B.C.</div>\n            </div>\n            <div class=\"contact-item\">\n              <div class=\"icon pull-left text-center email\"><span class=\"fa fa-envelope fa-fw\"></span></div>\n              <a href=\"mailto:bnguyen@outlook.com\">\n                <div class=\"title pull-right\">Email</div>\n                <div class=\"description pull-right\">bnguyen@outlook.com</div>\n              </a>\n            </div>\n            <div class=\"contact-item\">\n              <div class=\"icon pull-left text-center github\"><span class=\"fa fa-github fa-fw\"></span></div>\n              <a href=\"https://github.com/bnguyen86\">\n                <div class=\"title pull-right\">GitHub</div>\n                <div class=\"description pull-right\">https://github.com/bnguyen86</div>\n              </a>\n            </div>\n            <div class=\"contact-item\">\n              <div class=\"icon pull-left text-center linkedin\"><span class=\"fa fa-linkedin fa-fw\"></span></div>\n              <a href=\"https://ca.linkedin.com/pub/benjamin-nguyen/\">\n                <div class=\"title pull-right\">LinkedIn</div>\n                <div class=\"description pull-right\">https://ca.linkedin.com/pub/benjamin-nguyen/</div>\n              </a>\n            </div>\n          </div>\n          <!-- SKILLS -->\n          <div class=\"box\" ng-controller=\"skillsController\" id=\"skills\">\n            <h2>Skills</h2>\n            <div class=\"skills\">\n               <div ng-repeat=\"group in skillsArray\">\n                  <div class=\"item-skills\" data-percent=\"{{skill.rating}}\" ng-repeat=\"skill in group | orderBy:sm_name\">{{skill.s_name}}</div>\n               </div>\n\n<!--\n              <div class=\"skills-legend clearfix\">\n                <div class=\"legend-left legend\">Beginner</div>\n                <div class=\"legend-left legend\"><span>Proficient</span></div>\n                <div class=\"legend-right legend\"><span>Expert</span></div>\n                <div class=\"legend-right legend\">Master</div>\n              </div>\n\n-->\n            </div>\n          </div>\n\n          <!-- HOBBIES -->\n          <div class=\"box\" ng-controller=\"hobbiesController\">\n            <h2>Hobbies</h2>\n            <div class=\"hobby\"ng-repeat=\"h in hobbies\">{{h.description}}</div>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <!-- JQUERY -->\n    <script src=\"js/jquery.min.js\"></script>\n    <!-- ANGULAR -->\n    <script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.min.js\"></script>\n    <script src=\"js/ui-utils.min.js\"></script>\n    <!-- BOOTSTRAP -->\n    <script src=\"js/bootstrap.min.js\"></script>\n    <!-- SCRIPTS -->\n    <script src=\"js/scripts.js\"></script>\n    <script src=\"js/app.js\"></script>\n\n  </body>\n</html>",
+			"file": "index.html",
+			"file_size": 14112,
+			"file_write_time": 130624996618009123,
+			"settings":
+			{
+				"buffer_size": 13828,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<!doctype html>\n<html class=\"no-js\" lang=\"en\" ng-app=\"resumeApp\">\n	<head ng-controller=\"contentController\">\n		<meta charset=\"utf-8\" />\n		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n		<title>Benjamin Nguyen | Resume</title>\n		<link rel=\"stylesheet\" href=\"css/foundation.css\" />\n		<link rel=\"stylesheet\" href=\"css/font-awesome.min.css\">\n		<script src=\"js/vendor/modernizr.js\"></script>\n		<link rel=\"stylesheet\" href=\"css/app.css\" />\n		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>\n		<script>\n		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n\n		  ga('create', 'UA-57440701-1', 'auto');\n		  ga('send', 'pageview');\n\n		t</script>\n	</head>\n	<body ng-controller=\"contentController\">\n		<div class=\"sticky\">\n			<nav class=\"top-bar\" data-topbar role=\"navigation\">\n				<ul class=\"title-area\">\n					<li class=\"name\">\n						<h1><a href=\"#\"><b>Ben Nguyen</b></a></h1>\n					</li>\n					<li class=\"toggle-topbar menu-icon\">\n						<a href=\"#\"><span></span></a>\n					</li>\n				</ul>\n				<section class=\"top-bar-section\" style=\"text-align: center\">\n					<ul>\n						<li>\n							<a href=\"#profile\"><i class=\"fa fa-user fa-lg\"></i> Profile</a>\n						</li>\n						<li>\n							<a href=\"#skills\"><i class=\"fa fa-code fa-lg\"></i> Skills</a>\n						</li>\n						<li>\n							<a href=\"#projects\"><i class=\"fa fa-cubes fa-lg\"></i> Projects</a>\n						</li>\n						<li>\n							<a href=\"#work\"><i class=\"fa fa-building fa-lg\"></i> Work Experience</a>\n						</li>\n						<li>\n							<a href=\"#education\"><i class=\"fa fa-mortar-board fa-lg\"></i> Education</a>\n						</li>\n						<li>\n							<a href=\"#hobbies\"><i class=\"fa fa-coffee fa-lg\"></i> Hobbies</a>\n						</li>\n					</ul>\n				</section>\n			</nav>\n		</div>\n		<div class=\"row\">\n			<div class=\"small-12 columns\" style=\"padding:0px\">\n				<a class=\"anchor\" id=\"profile\"></a>\n				<div class=\"panel\">\n					<div class=\"panel-heading\">\n						<i class=\"fa fa-user fa-lg\"></i> Profile\n					</div>\n					<div class=\"panel-body\">\n						<h2>Benjamin D. Nguyen</h2>\n						<h5>Developer</h5>\n						<h6>Bachelor's of Computer Science</h6>\n						<i class=\"fa fa-globe\"></i> Vancouver, BC\n						<br>\n						<i class=\"fa fa-envelope\"></i> bnguyen@outlook.com\n						<br>\n						<a href=\"http://ca.linkedin.com/pub/benjamin-nguyen/18/752/738/\" style=\"color:#000000\"> <i class=\"fa fa-linkedin-square\"></i> LinkedIn Profile</a><br>\n						<a href=\"http://github.com/bnguyen86\" style=\"color:#000000\"> <i class=\"fa fa-github-square\"></i> GitHub Profile</a>\n					</div>\n				</div>\n\n				<a class=\"anchor\" id=\"skills\"></a>\n				<div class=\"panel\" ng-controller=\"skillsController\">\n					<div class=\"panel-heading\">\n						<i class=\"fa fa-code fa-lg\"></i> Skills				\n					</div>\n					<div class=\"panel-body row\">\n\n						<ul class=\"small-12 medium-3 columns end fa-ul\" ng-repeat=\"group in skillsArray\">\n							<li class=\"hover\" ng-repeat=\"skill in group | orderBy:sm_name\">\n								<i class=\"fa-li fa fa-angle-right\"></i>{{skill.s_name}}\n							</li>\n						</ul>\n\n					</div>\n				</div>\n\n				<a class=\"anchor\" id=\"projects\"></a>\n				<div class=\"panel\" ng-controller=\"projectsController\">\n					<div class=\"panel-heading\">\n						<i class=\"fa fa-cubes fa-lg\"></i> Projects\n						<span class=\"right heading-menus\">				 \n							<a href=\"#\" data-dropdown=\"drop0\" aria-controls=\"drop0\" aria-expanded=\"false\" class=\"dropdown\">\n								Sort By <i class=\"fa fa-caret-down\"></i>\n							</a>&nbsp;&nbsp;&nbsp;&nbsp;\n							<a ng-href=\"\" ng-click=\"p_order=false\" ng-init=\"p_order=true\">\n								<i class=\"fa fa-sort-amount-asc\"></i> \n							</a>\n							<a ng-href=\"\" ng-click=\"p_order=true\">\n								<i class=\"fa fa-sort-amount-desc\"></i> \n							</a>\n							<br>\n							<ul id=\"drop0\" data-dropdown-content class=\"f-dropdown\" aria-hidden=\"true\" tabindex=\"-1\">\n								<li ng-class=\"{active:p_sortVar=='p_name'}\">\n									<a ng-href=\"\" ng-click=\"p_sortVar='p_name'\" ng-init=\"p_sortVar='p_date'\">Name</a>\n								</li>\n								<li ng-class=\"{active:p_sortVar=='purpose'}\">\n									<a ng-href=\"\" ng-click=\"p_sortVar='purpose'\">Type</a>\n								</li>								\n								<li ng-class=\"{active:p_sortVar=='p_date'}\">\n									<a ng-href=\"\" ng-click=\"p_sortVar='p_date'\">Date</a>\n								</li>\n							</ul>\n						</span>\n					</div>\n					<div class=\"panel-body row\">\n						<div style=\"padding-left:15px\">\n							<a href=\"#\" data-dropdown=\"drop3\" aria-controls=\"drop3\" aria-expanded=\"false\" class=\"dropdown\">\n									Filter by Skill <i class=\"fa fa-caret-down\"></i>\n							</a>\n						</div>\n						<ul id=\"drop3\" data-dropdown-content class=\"f-dropdown\" aria-hidden=\"true\" tabindex=\"-1\">\n								<li ng-repeat=\"s in p_skills | unique:'s_name'\">\n									<input type=\"checkbox\" ng-model=\"skillTF\" ng-change=\"filterBySkill(s.s_name)\"> {{s.s_name}}\n								</li>\n						</ul>\n						<table class=\"small-12 column\" ng-repeat=\"project in projects | orderBy:p_sortVar:reverse=p_order | filter: {filtered:true}\" >\n							<tr>\n								<td colspan=\"2\" style=\"font-size: 0.75em; padding-bottom: 1px\">{{project.p_date | date:'MMMM, yyyy'}}</td>\n							</tr>\n							<tr>\n								<td><b>{{project.p_name}}</b></td>\n								<td>{{project.purpose}}</td>\n								\n							</tr>\n								<td colspan=\"2\">\n									<ul class=\"fa-ul\">\n										<li class=\"hover\" ng-repeat=\"detail in p_details | filter:{p_id:project.p_id}\">\n											<i class=\"fa-li fa fa-angle-right\"></i>{{detail.description}}\n										</li>\n									</ul>\n								</td>\n							<tr>\n								<td colspan=\"2\">Tags: \n									<span class=\"label\" ng-repeat=\"skill in project.skills\">\n										{{skill}}\n									</span>\n								</td>\n							</tr>\n							<tr>\n								<td colspan=\"2\"><a ng-href=\"{{project.url}}\">{{project.url}}</a></td>\n							</tr>\n							\n						</table>\n					</div>\n\n				</div>\n\n				<a class=\"anchor\" id=\"work\"></a>\n				<div class=\"panel\" ng-controller=\"workController\">\n					<div class=\"panel-heading\">\n						<i class=\"fa fa-building fa-lg\"></i> Work Experience\n						<span class=\"right heading-menus\">							 \n							<a href=\"#\" data-dropdown=\"drop1\" aria-controls=\"drop1\" aria-expanded=\"false\" class=\"dropdown\">\n								Sort By <i class=\"fa fa-caret-down\"></i>\n							</a>&nbsp;&nbsp;&nbsp;&nbsp;\n							<a ng-href=\"\" ng-click=\"w_order=false\" ng-init=\"w_order=true\">\n								<i class=\"fa fa-sort-amount-asc\"></i>\n							</a>\n							<a ng-href=\"\" ng-click=\"w_order=true\">\n								<i class=\"fa fa-sort-amount-desc\"></i> \n							</a>\n							<br>\n							<ul id=\"drop1\" data-dropdown-content class=\"f-dropdown\" aria-hidden=\"true\" tabindex=\"-1\">\n								<li ng-class=\"{active:w_sortVar=='company_name'}\">\n									<a ng-href=\"\" ng-click=\"w_sortVar='company_name'\" ng-init=\"w_sortVar='date_from'\">Company</a>\n								</li>\n								<li ng-class=\"{active:w_sortVar=='date_from'}\">\n									<a ng-href=\"\" ng-click=\"w_sortVar='date_from'\">Start Date</a>\n								</li>\n								<li>\n									<a ng-href=\"\" ng-click=\"w_sortVar='date_to'\">End Date</a>\n								</li ng-class=\"{active:w_sortVar=='date_to'}\">\n							</ul>\n						</span>\n					</div>\n					<div class=\"panel-body row\">\n						<table class=\"small-12 column\" ng-repeat=\"w in work | orderBy:w_sortVar:reverse=w_order\">\n							<tr>\n								<td colspan=\"2\" style=\"font-size: 0.75em; padding-bottom: 1px\">{{w.date_from | date:'MMMM, yyyy'}} to {{w.date_to | date:'MMMM, yyyy' | nullToPresent }}</td>\n							</tr>\n							<tr>\n								<td><b>{{w.company_name}}</b></td>\n								<td>{{w.location}}</td>\n							</tr>\n							<tr>\n								<td colspan=\"2\"><i>{{w.title}}</i></td>\n							</tr>\n\n							<tr ng-repeat=\"detail in w_details | filter:{w_id:w.w_id}\">\n								<td colspan=\"2\">{{detail.description}}</td>\n							</tr>\n						</table>\n					</div>\n\n				</div>\n\n				<a class=\"anchor\" id=\"education\"></a>\n				<div class=\"panel\" ng-controller=\"educationController\">\n					<div class=\"panel-heading\">\n						<i class=\"fa fa-mortar-board fa-lg\"></i> Education\n						<span class=\"right heading-menus\">\n							<a href=\"#\" data-dropdown=\"drop2\" aria-controls=\"drop1\" aria-expanded=\"false\" class=\"dropdown\">\n								Sort By <i class=\"fa fa-caret-down\"></i>\n							</a>&nbsp;&nbsp;&nbsp;&nbsp;\n\n							<a ng-href=\"\" ng-click=\"e_order=false\" ng-init=\"e_order=true\">\n								<i class=\"fa fa-sort-amount-asc\"></i>\n							</a>\n							<a ng-href=\"\" ng-click=\"e_order=true\">\n								<i class=\"fa fa-sort-amount-desc\"></i>\n							</a>\n							<br>\n							<ul id=\"drop2\" data-dropdown-content class=\"f-dropdown\" aria-hidden=\"true\" tabindex=\"-1\">\n								<li ng-class=\"{active:e_sortVar=='school_name'}\">\n									<a ng-href=\"\" ng-click=\"e_sortVar='school_name'\" ng-init=\"e_sortVar='date_from'\">School</a>\n								</li>\n								<li ng-class=\"{active:e_sortVar=='date_from'}\">\n									<a ng-href=\"\" ng-click=\"e_sortVar='date_from'\">Start Date</a>\n								</li>	\n								<li>\n									<a ng-href=\"\" ng-click=\"e_sortVar='date_to'\">End Date</a>\n								</li ng-class=\"{active:e_sortVar=='date_to'}\">								\n							</ul>		\n						</span>\n					</div>\n					<div class=\"panel-body row\">\n						<table class=\"small-12 column\" ng-repeat=\"e in edu | orderBy:e_sortVar:reverse=e_order\">\n							<tr>\n								<td colspan=\"2\" style=\"font-size: 0.75em; padding-bottom: 1px\">{{e.date_from | date:'MMMM, yyyy'}} to {{e.date_to | date:'MMMM, yyyy' | nullToPresent }}</td>\n							</tr>\n							<tr>\n								<td><b>{{e.school_name}}</b></td>\n								<td>{{e.location}}</td>\n							</tr>\n							<tr>\n								<td colspan=\"2\"><i>{{e.program}}</i></td>\n							</tr>\n\n							<tr ng-repeat=\"detail in e_details\">\n								<td>{{detail}}</td>\n							</tr>\n						</table>\n					</div>\n\n				</div>\n\n				<a class=\"anchor\" id=\"hobbies\"></a>\n				<div class=\"panel\" ng-controller=\"hobbiesController\">\n					<div class=\"panel-heading\">\n						<i class=\"fa fa-coffee fa-lg\"></i> Hobbies\n					</div>\n					<div class=\"panel-body\">\n						<table class=\"small-12 column\">\n							<tr ng-repeat=\"h in hobbies\">\n								<td>{{h.description}}</td>\n							</tr>\n						</table>\n					</div>\n\n				</div>\n			</div>\n		</div>\n		<!--Scripts-->\n		<script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.min.js\"></script>\n		<script src=\"js/ui-utils.min.js\"></script>\n		<script src=\"js/vendor/jquery.js\"></script>\n		<script src=\"js/foundation.min.js\"></script>\n		<script src=\"js/app.js\"></script>\n		<script>\n			$(document).foundation();\n		</script>\n	</body>\n</html>\n",
+			"file": "index_old.html",
+			"file_size": 10639,
+			"file_write_time": 130624997343901712,
+			"settings":
+			{
+				"buffer_size": 10640,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 60.0,
+		"selected_items":
+		[
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 498.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"node"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Benjamin/OneDrive/workspace/products_WB0265951",
+		"/C/Users/Benjamin/OneDrive/workspace/products_WB0265951/css",
+		"/C/Users/Benjamin/OneDrive/workspace/products_WB0265951/js"
+	],
+	"file_history":
+	[
+		"/C/Users/Benjamin/OneDrive/workspace/products_WB0265951/js/scripts.js",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/index.html",
+		"/C/Users/Benjamin/OneDrive/workspace/WhatsForDinner/index.js",
+		"/C/Users/Benjamin/Desktop/ben-nguyen.com",
+		"/C/Users/Benjamin/Desktop/my.cnf",
+		"/C/Users/Benjamin/OneDrive/workspace/MyClassLoad/mongoload.bat",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/data/tables.sql",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/data/tablesdrop.sql",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/data/data.sql",
+		"/C/Users/Benjamin/Documents/dumps/tables2.sql",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/Todo.todo",
+		"/C/Users/Benjamin/OneDrive/Sublime Text Build 3065 x64/Data/Packages/ToDone/readme.todo",
+		"/C/Users/Benjamin/OneDrive/Sublime Text Build 3065 x64/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Benjamin/OneDrive/Sublime Text Build 3065 x64/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Benjamin/OneDrive/Sublime Text Build 3065 x64/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/less/spinning.less",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/less/stacked.less",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/node_modules/mysql/lib/protocol/packets/HandshakeInitializationPacket.js",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/node_modules/express/node_modules/cookie-signature/Makefile",
+		"/C/Users/Benjamin/OneDrive/workspace/Personal Site/server.js",
+		"/C/Users/Benjamin/Desktop/Sublime Text Build 3065 x64/Data/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Benjamin/Desktop/Sublime Text Build 3065 x64/Data/Packages/User/Monokai (SL).tmTheme",
+		"/C/Users/Benjamin/Desktop/Sublime Text Build 3065 x64/Data/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<a href=\"#\"",
+			"href=\"http://example.com\"",
+			"2E4372",
+			"051F56",
+			"EC7263",
+			"F0563D",
+			"EC7263",
+			"F0563D",
+			"skills(`s_name`)",
+			"75em",
+			"5em",
+			"ul id=",
+			"class=\"right",
+			"Testing",
+			"									<",
+			">\n",
+			"=\"\">"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"4F5E7F",
+			"122C64",
+			"2E4372",
+			"051F56",
+			"0A255D",
+			"001749"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								825,
+								825
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 646.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4727,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								796,
+								796
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8036,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7598,
+								7598
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4999.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								585,
+								981
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 141.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "index_old.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								986,
+								986
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.412632164719,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.685776036948,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 102.0
+	},
+	"project": "resume2.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"index.html"
+			],
+			[
+				"pack",
+				"Package Control Messages"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 3,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 123.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
