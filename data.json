@@ -1,8 +1,282 @@
 {
-    "about_me" : "I am a developer from Vancouver, BC. I am currently working on a Bachelor of Computer Science (BCS) at the University of British Columbia. I also have a Bachelor of Science (BSc.) from the University of British Columbia with major in Cell Biology and Genetics and a minor in Commerce.",
-    "projects" : [],
-    "work" : [],
-    "education" : [],
-    "skills" : []
+    "about_me": "I am a developer from Vancouver, BC. I am currently working on a Bachelor of Computer Science (BCS) at the University of British Columbia. I also have a Bachelor of Science (BSc.) from the University of British Columbia with major in Cell Biology and Genetics and a minor in Commerce.",
+    "work": [{
+        "date_from": "2008-12-02",
+        "date_to": "2013-08-31",
+        "company_name": "VWR International, LLC",
+        "title": "On-site Coordinator",
+        "location": "Vancouver, B.C.",
+        "dept": "Sales Department",
+        "description":[
+            "Managed store room of laboratory supplies for labs in the VGH area",
+            "Aided customers with supply order inquiries and pricing issues",
+            "Organized annual supplier trade shows for the local area"
+        ]
+    }, {
+        "date_from": "2008-07-02",
+        "date_to": "2013-08-31",
+        "company_name": "University of British Columbia ",
+        "title": "Operations Assistant",
+        "location": "Vancouver, B.C.",
+        "dept": "ICORD",
+        "description":[
+            "Maintained VoIP telephone system for the department using Cisco Unified Communications Manager",
+            "Served on building safety committee for 3 years, chaired for 5 months",
+            "Created a database in Excel for over 100 pieces of equipment in the building",
+            "Supervised events held by external organizations that took place in the building"
+        ]
+    }, {
+        "date_from": "2012-02-01",
+        "date_to": "2015-04-09",
+        "company_name": "SP Pacific Consulting",
+        "title": "Regulated Canadian Immigration Consultant",
+        "location": "Vancouver, B.C.",
+        "dept": null,
+        "description":[
+            "Completed over 40 cases to date with a ~90% success rate"
+        ]
+    }, {
+        "date_from": "2012-01-02",
+        "date_to": "2015-04-09",
+        "company_name": "B. Nguyen Immigration Consulting",
+        "title": "Regulated Canadian Immigration Consultant",
+        "location": "Vancouver, B.C.",
+        "dept": null,
+        "description":[
+            "Advising clients and their families on different immigration options",
+            "Completing and submitting applications to Citizenship and Immigration Canada",
+            "Completed over 15 cases to date with a ~90% success rate"
+        ]
+    }, {
+        "date_from": "2014-09-02",
+        "date_to": "2015-12-11",
+        "company_name": "Groundswell Cloud Solutions",
+        "title": "Developer",
+        "location": "Vancouver, B.C.",
+        "dept": null,
+        "description":[
+            "Developing websites and cloud applications for various clients on the Salesforce platform",
+            "Using Apex, Visualforce, Javascript to develop dynamic content for both internal and external use for by the client, and by our own company",
+            "Thoroughly testing each component we create by ensuring all test cases cover >75% of our code"
+        ]
+    }],
+
+    "projects": [
+        {
+            "p_name": "Friend Finder Android App",
+            "p_date": "2013-11-01",
+            "purpose": "Academic",
+            "url": null,
+            "skills":[],
+            "details":[
+                "Developed in team of 2 using SVN for version control using the Android SDK and Java in Eclipse",
+                "Implemented the functionality to query the locations of randomly generated “friends” from a web server and find bus routes to them using the Translink API",
+                "Added the ability to track “friends” on the map and have their locations updated in real-time"
+            ]
+        }, {
+            "p_name": "Open Data/Social Media Website",
+            "p_date": "2014-01-01",
+            "purpose": "Academic",
+            "url": "http://voltfinderapp.appspot.com/",
+            "skills":[],
+            "details":[
+                "Built a website to parse publically available data about electric car charge stations",
+                "Integrated Google maps into page for displaying stations",
+                "Implemented ability to retrieve and store station information to a database",
+                "Built using the Google Web Toolkit and Java in Eclipse",
+                "Tested and debugged data parser using JUnit and rest of project using test cases"
+            ]
+        }, {
+            "p_name": "Personal Wedding Website",
+            "p_date": "2014-05-01",
+            "purpose": "Personal",
+            "url": "http://amy-ben-2014.appspot.com/",
+            "skills":[],
+            "details":[
+                "Developed website to provide guests with information about upcoming wedding using Google Web Toolkit, Java, HTML, CSS using Eclipse",
+                "Designed using Bootstrap for GWT"
+            ]
+        }, {
+            "p_name": "Wedding Database Manager",
+            "p_date": "2014-06-01",
+            "purpose": "Academic",
+            "url": "http://www.ugrad.cs.ubc.ca/~p7m5/",
+            "skills":[],
+            "details":[
+                "Developed in team of 4 using Agile methodology and GitHub for version control",
+                "Designed and built a database to track wedding guests using Oracle SQL*Plus ",
+                "Oversaw the UI design using Bootstrap to create desktop and mobile layouts",
+                "Developed and coded functionality using PHP, HTML, CSS",
+                "Tested and debugged application using various test cases",
+                "Presented project to the TA after completion"
+            ]
+        }, {
+            "p_name": "Personal Resume Page",
+            "p_date": "2014-10-01",
+            "purpose": "Personal",
+            "url": null,
+            "skills":[],
+            "details":[
+                "Personal home page with current resume",
+                "Designed using Foundation 5 with some Bootstrap elements added",
+                "Uses AngularJS to render content",
+                "Server implemented using Node.js and Express framework",
+                "MySQL used for database"
+            ]
+        }, {
+            "p_name": "KidFitApp",
+            "p_date": "2014-11-01",
+            "purpose": "Personal",
+            "url": "http://kidfitapp.com",
+            "skills":[],
+            "details":[
+                "Project for Money 20/20 hackathon in Las Vegas, NV",
+                "Created using Node.js, AngularJS, Android SDK and Android Wear SDK",
+                "Parents can challenge their children with fitness goals from a website",
+                "Goals will show up on the child’s phone and progress is tracked with a smartwatch",
+                "Gifts are rewarded to the child using ModoPayments API",
+                "Completed in 24 hours with a group of 2 developers and 1 designer",
+                "Won a prize worth about $5000.00USD"
+            ]
+        }
+    ],
+
+    "education": [{
+        "date_from": "2004-09-02",
+        "date_to": "2008-05-31",
+        "school_name": "University of British Columbia",
+        "program": "B.Sc. Major in Cell Biology and Genetics, Minor in Commerce",
+        "location": "Vancouver, B.C."
+    }, {
+        "date_from": "2010-09-02",
+        "date_to": "2011-05-31",
+        "school_name": "University of British Columbia",
+        "program": "Certificate in Immigration: Laws, Policies and Procedures",
+        "location": "Vancouver, B.C."
+    }, {
+        "date_from": "2013-09-02",
+        "date_to": null,
+        "school_name": "University of British Columbia",
+        "program": "BCS – Bachelor of Computer Science",
+        "location": "Vancouver, B.C."
+    }],
+
+    "skills": [{
+        "name": "Agile",
+        "category": "Concepts",
+        "rating": 0.6
+    }, {
+        "name": "Android SDK",
+        "category": "Java",
+        "rating": 0.25
+    }, {
+        "name": "AngularJS",
+        "category": "Javascript",
+        "rating": 0.7
+    }, {
+        "name": "Apex",
+        "category": "Salesforce",
+        "rating": 0.75
+    }, {
+        "name": "Bootstrap",
+        "category": "CSS",
+        "rating": 0.8
+    }, {
+        "name": "C/C++",
+        "category": "C/C++",
+        "rating": 0.5
+    }, {
+        "name": "CSS",
+        "category": "CSS",
+        "rating": 0.8
+    }, {
+        "name": "Eclipse",
+        "category": "Tools",
+        "rating": 0.75
+    }, {
+        "name": "Foundation",
+        "category": "CSS",
+        "rating": 0.8
+    }, {
+        "name": "Git",
+        "category": "Tools",
+        "rating": 0.6
+    }, {
+        "name": "GWT",
+        "category": "Java",
+        "rating": 0.6
+    }, {
+        "name": "HTML",
+        "category": "HTML",
+        "rating": 0.8
+    }, {
+        "name": "Java",
+        "category": "Java",
+        "rating": 0.75
+    }, {
+        "name": "Javascript",
+        "category": "Javascript",
+        "rating": 0.8
+    }, {
+        "name": "jQuery",
+        "category": "Javascript",
+        "rating": 0.8
+    }, {
+        "name": "JUnit",
+        "category": "Java",
+        "rating": 0.5
+    }, {
+        "name": "MySQL",
+        "category": "Relational Databases",
+        "rating": 0.7
+    }, {
+        "name": "Node.js",
+        "category": "Javascript",
+        "rating": 0.65
+    }, {
+        "name": "NoSQL",
+        "category": "Relational Databases",
+        "rating": 0.6
+    }, {
+        "name": "Object Oriented Programming",
+        "category": "Concepts",
+        "rating": 0.8
+    }, {
+        "name": "Oracle SQL*Plus",
+        "category": "Relational Databases",
+        "rating": 0.7
+    }, {
+        "name": "Parse",
+        "category": "Relational Databases",
+        "rating": 0.4
+    }, {
+        "name": "PHP",
+        "category": "PHP",
+        "rating": 0.6
+    }, {
+        "name": "Salesforce",
+        "category": "Salesforce",
+        "rating": 0.75
+    }, {
+        "name": "SOQL",
+        "category": "Salesforce",
+        "rating": 0.75
+    }, {
+        "name": "SQL",
+        "category": "Relational Databases",
+        "rating": 0.75
+    }, {
+        "name": "Sublime Text",
+        "category": "Tools",
+        "rating": 0.7
+    }],
+
+    "hobbies": [{
+        "description": "Enjoy reading the latest news in science and technology by reading various blogs"
+    }, {
+        "description": "Modifying, fixing, disassembling electronics"
+    }, {
+        "description": "Enjoy an active lifestyle by playing volleyball, squash, and many outdoor activities such as hiking and camping"
+    }]
 
 }

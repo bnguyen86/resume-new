@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="resumeApp">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,287 +14,264 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-57440701-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-57440701-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
 
-</script>
-  </head>
-  <body ng-cloak>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="http://ben-nguyen.com"><img class="img-responsive" src="img/logo.svg" alt="avatar" width="44px" height="44px"></a>
+<body ng-cloak>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://ben-nguyen.com"><img class="img-responsive" src="img/logo.svg" alt="avatar" width="44px" height="44px"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" onclick="scrollToAnchor('#about-me')">About</a></li>
+                    <li><a href="#" onclick="scrollToAnchor('#projects')">Projects</a></li>
+                    <li><a href="#" onclick="scrollToAnchor('#work')">Work Experience</a></li>
+                    <li><a href="#" onclick="scrollToAnchor('#school')">Education</a></li>
+                    <li><a href="#" onclick="scrollToAnchor('#skills')">Skills</a></li>
+                    <li><a href="#" onclick="scrollToAnchor('#contact')">Contact</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container" style="padding-top: 50px" ng-controller="contentController">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="photo-header" class="text-center">
+                    <!-- PHOTO (AVATAR) -->
+                    <div id="photo">
+                        <img src="img/logo.svg" alt="avatar">
+                    </div>
+                    <div id="text-header">
+                        <h1>Benjamin D. Nguyen
+                        <br><br>This is my <span>resume</span></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8">
+                <!-- ABOUT ME -->
+                <div class="box" id="about-me">
+                    <h2>About Me</h2>
+                    <p>{{about}}</p>
+                </div>
+                <!-- PROJECTS -->
+                <div class="box" id="projects">
+                    <h2>Projects</h2>
+                    <div class="dropdown pull-right">
+                        <a id="fLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                          Sort By <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="fLabel">
+                            <li ng-class="{active:p_sortVar=='p_name'}">
+                                <a ng-href="" ng-click="p_sortVar='p_name'" ng-init="p_sortVar='p_date'">Name</a>
+                            </li>
+                            <li ng-class="{active:p_sortVar=='purpose'}">
+                                <a ng-href="" ng-click="p_sortVar='purpose'">Type</a>
+                            </li>
+                            <li ng-class="{active:p_sortVar=='p_date'}">
+                                <a ng-href="" ng-click="p_sortVar='p_date'">Date</a>
+                            </li>
+                        </ul>
+                        <a ng-href="" ng-click="p_order=false" ng-init="p_order=true">
+                            <i class="fa fa-sort-amount-asc"></i>
+                        </a>
+                        <a ng-href="" ng-click="p_order=true">
+                            <i class="fa fa-sort-amount-desc"></i>
+                        </a>
+                    </div>
+                    <br>
+                    <div class="job clearfix" ng-repeat="p in projects | orderBy:p_sortVar:reverse=p_order">
+                      <div class="col-xs-3">
+                        <div class="where">{{p.purpose}}</div>
+                        <div class="year">{{p.p_date | date:'MMMM, yyyy'}}</div>
+                      </div>
+                      <div class="col-xs-9">
+                        <div class="profession">{{p.p_name}}</div>
+                        <div class="description">
+                            <ul class="fa-ul">
+                              <li class="hover" ng-repeat="detail in p.details" data-stopPropagation="true">
+                                <i class="fa-li fa fa-angle-right"></i>{{detail}}
+                              </li>
+                            </ul>
+                        </div>
+                      </div>
+                      <div class="col-xs-9">
+                        <span ng-repeat="skill in p.skills" class="label label-default">
+                          {{skill}}
+                        </span>
+                      </div>
+                    </div>
+                </div>
+                <!-- WORK EXPERIENCE -->
+                <div class="box" id="work">
+                  <h2>Work Experience</h2>
+                  <div class="dropdown pull-right">
+                    <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                      Sort By <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                      <li ng-class="{active:w_sortVar=='company_name'}">
+                        <a ng-href="" ng-click="w_sortVar='company_name'" ng-init="w_sortVar='date_from'">Company</a>
+                      </li>
+                      <li ng-class="{active:w_sortVar=='date_from'}">
+                        <a ng-href="" ng-click="w_sortVar='date_from'">Start Date</a>
+                      </li>
+                      <li>
+                        <a ng-href="" ng-click="w_sortVar='date_to'">End Date</a>
+                      </li ng-class="{active:w_sortVar=='date_to'}">
+                    </ul>
+                      <a ng-href="" ng-click="w_order=false" ng-init="w_order=true">
+                          <i class="fa fa-sort-amount-asc"></i>
+                      </a>
+                      <a ng-href="" ng-click="w_order=true">
+                          <i class="fa fa-sort-amount-desc"></i>
+                      </a>
+                  </div>
+                  <div class="job clearfix" ng-repeat="w in work | orderBy:w_sortVar:reverse=w_order">
+                      <div class="col-xs-3">
+                          <div class="where">{{w.company_name}}</div>
+                          <div class="year">{{w.date_from | date:'MMMM, yyyy'}} to {{w.date_to | date:'MMMM, yyyy' | nullToPresent }}</div>
+                      </div>
+                      <div class="col-xs-9">
+                        <div class="profession">{{w.title}}</div>
+                          <div class="description">
+                            <ul class="fa-ul">
+                              <li class="hover" ng-repeat="d in w.description">
+                                <i class="fa-li fa fa-angle-right"></i>{{d}}
+                              </li>
+                            </ul>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <!-- EDUCATION -->
+                <div class="box" id="school">
+                    <h2>Education</h2>
+                    <div class="dropdown pull-right">
+                      <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                        Sort By <i class="fa fa-caret-down"></i>
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li ng-class="{active:w_sortVar=='school_name'}">
+                          <a ng-href="" ng-click="e_sortVar='school_name'" ng-init="e_sortVar='date_from'">School</a>
+                        </li>
+                        <li ng-class="{active:e_sortVar=='date_from'}">
+                          <a ng-href="" ng-click="e_sortVar='date_from'">Start Date</a>
+                        </li>
+                        <li>
+                          <a ng-href="" ng-click="e_sortVar='date_to'">End Date</a>
+                        </li ng-class="{active:e_sortVar=='date_to'}">
+                      </ul>
+                      <a ng-href="" ng-click="e_order=false" ng-init="e_order=true">
+                        <i class="fa fa-sort-amount-asc"></i>
+                      </a>
+                      <a ng-href="" ng-click="e_order=true">
+                        <i class="fa fa-sort-amount-desc"></i>
+                      </a>
+                    </div>
+                    <div class="job clearfix" ng-repeat="e in education | orderBy:e_sortVar:reverse=e_order">
+                        <div class="col-xs-3">
+                          <div class="where">{{e.date_from | date:'MMM, yyyy'}} to {{e.date_to | date:'MMM, yyyy' | nullToPresent }}</div>
+                          <div class="year">{{e.location}}</div>
+                        </div>
+                        <div class="col-xs-9">
+                          <div class="profession">{{e.school_name}}</div>
+                          <div class="description">{{e.program}}</div>
+                          <div class="description">
+                            <ul class="fa-ul">
+                              <li class="hover" ng-repeat="detail in e_details">
+                                <i class="fa-li fa fa-angle-right"></i>{{detail}}
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+                <!-- CONTACT -->
+                <div class="box clearfix" id="contact">
+                    <h2>Contact</h2>
+                    <div class="contact-item">
+                        <div class="icon pull-left text-center map"><span class="fa fa-map-marker fa-fw"></span></div>
+                        <div class="title only pull-right">Vancouver, B.C.</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon pull-left text-center email"><span class="fa fa-envelope fa-fw"></span></div>
+                        <a href="mailto:bnguyen@outlook.com">
+                            <div class="title pull-right">Email</div>
+                            <div class="description pull-right">bnguyen@outlook.com</div>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon pull-left text-center github"><span class="fa fa-github fa-fw"></span></div>
+                        <a href="https://github.com/bnguyen86">
+                            <div class="title pull-right">GitHub</div>
+                            <div class="description pull-right">bnguyen86</div>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon pull-left text-center linkedin"><span class="fa fa-linkedin fa-fw"></span></div>
+                        <a href="https://ca.linkedin.com/in/benjamin-nguyen-73875218">
+                            <div class="title pull-right">LinkedIn</div>
+                            <div class="description pull-right">Benjamin Nguyen</div>
+                        </a>
+                    </div>
+                </div>
+                <!-- SKILLS -->
+                <div class="box" id="skills">
+                    <h2>Skills</h2>
+                    <div class="skills">
+                      <div class="item-skills" ng-style="{'width':skill.rating*100 + '%'}" data-percent="{{skill.rating}}" ng-repeat="skill in skills | orderBy: name">
+                        {{skill.name}}
+                      </div>
+                    </div>
+                </div>
+                <!-- HOBBIES -->
+                <div class="box">
+                  <h2>Hobbies</h2>
+                  <div class="hobby" ng-repeat="h in hobbies">{{h.description}}</div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#" onclick="scrollToAnchor('#about-me')">About</a></li>
-        <li><a href="#" onclick="scrollToAnchor('#projects')">Projects</a></li>
-        <li><a href="#" onclick="scrollToAnchor('#work')">Work Experience</a></li>
-        <li><a href="#" onclick="scrollToAnchor('#school')">Education</a></li>
-        <li><a href="#" onclick="scrollToAnchor('#skills')">Skills</a></li>
-        <li><a href="#" onclick="scrollToAnchor('#contact')">Contact</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-    <div class="container" style="padding-top: 50px">
-      <div class="row">
-        <div class="col-xs-12">
-          <div id="photo-header" class="text-center">
-            <!-- PHOTO (AVATAR) -->
-            <div id="photo">
-              <img src="img/logo.svg" alt="avatar">
-            </div>
-            <div id="text-header">
-              <h1>Benjamin D. Nguyen
-              <br><br>This is my <span>resume</span></h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-8">
-          <!-- ABOUT ME -->
-          <div class="box" id="about-me">
-            <h2>About Me</h2>
-            <p>I am a developer from Vancouver, BC. I am currently working on a Bachelor of Computer Science (BCS) at the University of British Columbia. I also have a Bachelor of Science (BSc.) from the University of British Columbia with major in Cell Biology and Genetics and a minor in Commerce.</p>
-          </div>
-          <!-- PROJECTS -->
-          <div class="box" ng-controller="projectsController" id="projects">
-            <h2>Projects</h2>
-  
-            <div class="dropdown pull-right">
-              <a id="fLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                 Sort By <i class="fa fa-caret-down"></i></span>
-              </a>
-
-              <ul class="dropdown-menu" role="menu" aria-labelledby="fLabel">
-                <li ng-class="{active:p_sortVar=='p_name'}">
-                  <a ng-href="" ng-click="p_sortVar='p_name'" ng-init="p_sortVar='p_date'">Name</a>
-                </li>
-                <li ng-class="{active:p_sortVar=='purpose'}">
-                  <a ng-href="" ng-click="p_sortVar='purpose'">Type</a>
-                </li>               
-                <li ng-class="{active:p_sortVar=='p_date'}">
-                  <a ng-href="" ng-click="p_sortVar='p_date'">Date</a>
-                </li>
-              </ul>
-              <a ng-href="" ng-click="p_order=false" ng-init="p_order=true">
-                <i class="fa fa-sort-amount-asc"></i> 
-              </a>
-              <a ng-href="" ng-click="p_order=true">
-                <i class="fa fa-sort-amount-desc"></i> 
-              </a>
-            </div>
-
-            <div class="dropdown pull-left">
-              <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                 Filter by Skill <i class="fa fa-caret-down"></i></span>
-              </a>
-
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style="padding: 10px">
-                  <li ng-repeat="s in p_skills | unique:'s_name'">
-                    <input type="checkbox" ng-model="skillTF" ng-change="filterBySkill(s.s_name)"> {{s.s_name}}
-                  </li>
-              </ul>
-            </div>
-            <br>
-            <div class="job clearfix" ng-repeat="project in projects | orderBy:p_sortVar:reverse=p_order | filter: {filtered:true}">
-              <div class="col-xs-3">
-                <div class="where">{{project.purpose}}</div>
-                <div class="year">{{project.p_date | date:'MMMM, yyyy'}}</div>
-              </div>
-              <div class="col-xs-9">
-                <div class="profession">{{project.p_name}}</div>
-                <div class="description">
-                  <ul class="fa-ul">
-                    <li class="hover" ng-repeat="detail in p_details | filter:{p_id:project.p_id}" data-stopPropagation="true">
-                      <i class="fa-li fa fa-angle-right"></i>{{detail.description}}
-                    </li>
-                  </ul>                  
-                </div>
-              </div>
-              <div class="col-xs-9">
-                    <span ng-repeat="skill in project.skills" class="label label-default">
-                      {{skill}}
-                    </span>
-              </div>
-            </div>
-
-          <!-- WORK EXPERIENCE -->
-          <div class="box" ng-controller="workController" id="work">
-            <h2>Work Experience</h2>
-            <div class="dropdown pull-right">
-              <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                 Sort By <i class="fa fa-caret-down"></i></span>
-              </a>
-
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li ng-class="{active:w_sortVar=='company_name'}">
-                  <a ng-href="" ng-click="w_sortVar='company_name'" ng-init="w_sortVar='date_from'">Company</a>
-                </li>
-                <li ng-class="{active:w_sortVar=='date_from'}">
-                  <a ng-href="" ng-click="w_sortVar='date_from'">Start Date</a>
-                </li>
-                <li>
-                  <a ng-href="" ng-click="w_sortVar='date_to'">End Date</a>
-                </li ng-class="{active:w_sortVar=='date_to'}">
-              </ul>
-              <a ng-href="" ng-click="w_order=false" ng-init="w_order=true">
-                <i class="fa fa-sort-amount-asc"></i>
-              </a>
-              <a ng-href="" ng-click="w_order=true">
-                <i class="fa fa-sort-amount-desc"></i> 
-              </a>
-            </div>
-            <div class="job clearfix" ng-repeat="w in work | orderBy:w_sortVar:reverse=w_order">
-              <div class="col-xs-3">
-                <div class="where">{{w.company_name}}</div>
-                <div class="year">{{w.date_from | date:'MMMM, yyyy'}} to {{w.date_to | date:'MMMM, yyyy' | nullToPresent }}</div>
-              </div>
-              <div class="col-xs-9">
-                <div class="profession">{{w.title}}</div>
-                <div class="description">
-                  <ul class="fa-ul">
-                    <li class="hover" ng-repeat="detail in w_details | filter:{w_id:w.w_id}">
-                      <i class="fa-li fa fa-angle-right"></i>{{detail.description}}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-
-          <!-- EDUCATION -->
-          <div class="box" ng-controller="educationController" id="school">
-            <h2>Education</h2>
-            <div class="dropdown pull-right">
-              <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                 Sort By <i class="fa fa-caret-down"></i></span>
-              </a>
-
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li ng-class="{active:w_sortVar=='school_name'}">
-                  <a ng-href="" ng-click="e_sortVar='school_name'" ng-init="e_sortVar='date_from'">School</a>
-                </li>
-                <li ng-class="{active:e_sortVar=='date_from'}">
-                  <a ng-href="" ng-click="e_sortVar='date_from'">Start Date</a>
-                </li>
-                <li>
-                  <a ng-href="" ng-click="e_sortVar='date_to'">End Date</a>
-                </li ng-class="{active:e_sortVar=='date_to'}">
-              </ul>
-              <a ng-href="" ng-click="e_order=false" ng-init="e_order=true">
-                <i class="fa fa-sort-amount-asc"></i>
-              </a>
-              <a ng-href="" ng-click="e_order=true">
-                <i class="fa fa-sort-amount-desc"></i>
-              </a>
-            </div>
-            <div class="job clearfix" ng-repeat="e in edu | orderBy:e_sortVar:reverse=e_order">
-              <div class="col-xs-3">
-                <div class="where">{{e.date_from | date:'MMM, yyyy'}} to {{e.date_to | date:'MMM, yyyy' | nullToPresent }}</div>
-                <div class="year">{{e.location}}</div>                
-              </div>
-              <div class="col-xs-9">
-                <div class="profession">{{e.school_name}}</div>
-                <div class="description">{{e.program}}</div>
-                <div class="description">
-                  <ul class="fa-ul">
-                    <li class="hover" ng-repeat="detail in e_details">
-                      <i class="fa-li fa fa-angle-right"></i>{{detail}}
-                    </li>
-                  </ul> 
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <!-- CONTACT -->
-          <div class="box clearfix" id="contact">
-            <h2>Contact</h2>
-            <div class="contact-item">
-              <div class="icon pull-left text-center map"><span class="fa fa-map-marker fa-fw"></span></div>
-              <div class="title only pull-right">Vancouver, B.C.</div>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center email"><span class="fa fa-envelope fa-fw"></span></div>
-              <a href="mailto:bnguyen@outlook.com">
-                <div class="title pull-right">Email</div>
-                <div class="description pull-right">bnguyen@outlook.com</div>
-              </a>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center github"><span class="fa fa-github fa-fw"></span></div>
-              <a href="https://github.com/bnguyen86">
-                <div class="title pull-right">GitHub</div>
-                <div class="description pull-right">https://github.com/bnguyen86</div>
-              </a>
-            </div>
-            <div class="contact-item">
-              <div class="icon pull-left text-center linkedin"><span class="fa fa-linkedin fa-fw"></span></div>
-              <a href="https://ca.linkedin.com/pub/benjamin-nguyen/">
-                <div class="title pull-right">LinkedIn</div>
-                <div class="description pull-right">https://ca.linkedin.com/pub/benjamin-nguyen/</div>
-              </a>
-            </div>
-          </div>
-          <!-- SKILLS -->
-          <div class="box" ng-controller="skillsController" id="skills">
-            <h2>Skills</h2>
-            <div class="skills">
-               <div ng-repeat="group in skillsArray">
-                  <div class="item-skills" data-percent="{{skill.rating}}" ng-repeat="skill in group | orderBy:sm_name">{{skill.s_name}}</div>
-               </div>
-
-<!--
-              <div class="skills-legend clearfix">
-                <div class="legend-left legend">Beginner</div>
-                <div class="legend-left legend"><span>Proficient</span></div>
-                <div class="legend-right legend"><span>Expert</span></div>
-                <div class="legend-right legend">Master</div>
-              </div>
-
--->
-            </div>
-          </div>
-
-          <!-- HOBBIES -->
-          <div class="box" ng-controller="hobbiesController">
-            <h2>Hobbies</h2>
-            <div class="hobby"ng-repeat="h in hobbies">{{h.description}}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- JQUERY -->
     <script src="js/jquery.min.js"></script>
     <!-- ANGULAR -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="js/ui-utils.min.js"></script>
     <!-- BOOTSTRAP -->
     <script src="js/bootstrap.min.js"></script>
     <!-- SCRIPTS -->
     <script src="js/scripts.js"></script>
     <script src="js/app.js"></script>
+</body>
 
-  </body>
 </html>
