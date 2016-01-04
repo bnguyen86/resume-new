@@ -67,7 +67,7 @@
             "p_date": "2013-11-01",
             "purpose": "Academic",
             "url": null,
-            "skills":[],
+            "skills":["Android SDK", "Git", "Java", "Eclipse"],
             "details":[
                 "Developed in team of 2 using SVN for version control using the Android SDK and Java in Eclipse",
                 "Implemented the functionality to query the locations of randomly generated “friends” from a web server and find bus routes to them using the Translink API",
@@ -78,7 +78,7 @@
             "p_date": "2014-01-01",
             "purpose": "Academic",
             "url": "http://voltfinderapp.appspot.com/",
-            "skills":[],
+            "skills":["GWT","Eclipse", "Java", "Git", "JUnit"],
             "details":[
                 "Built a website to parse publically available data about electric car charge stations",
                 "Integrated Google maps into page for displaying stations",
@@ -91,7 +91,7 @@
             "p_date": "2014-05-01",
             "purpose": "Personal",
             "url": "http://amy-ben-2014.appspot.com/",
-            "skills":[],
+            "skills":["GWT","Eclipse", "Java", "Git", "JUnit"],
             "details":[
                 "Developed website to provide guests with information about upcoming wedding using Google Web Toolkit, Java, HTML, CSS using Eclipse",
                 "Designed using Bootstrap for GWT"
@@ -101,7 +101,7 @@
             "p_date": "2014-06-01",
             "purpose": "Academic",
             "url": "http://www.ugrad.cs.ubc.ca/~p7m5/",
-            "skills":[],
+            "skills":["SQL", "PHP","Git","Oracle SQL*Plus","Bootstrap"],
             "details":[
                 "Developed in team of 4 using Agile methodology and GitHub for version control",
                 "Designed and built a database to track wedding guests using Oracle SQL*Plus ",
@@ -115,20 +115,18 @@
             "p_date": "2014-10-01",
             "purpose": "Personal",
             "url": null,
-            "skills":[],
+            "skills":["AngularJS", "HTML", "Foundation", "Bootstrap","CSS","Javascript"],
             "details":[
                 "Personal home page with current resume",
-                "Designed using Foundation 5 with some Bootstrap elements added",
-                "Uses AngularJS to render content",
-                "Server implemented using Node.js and Express framework",
-                "MySQL used for database"
+                "Designed from a modified template using Bootstrap",
+                "Uses AngularJS to render content"
             ]
         }, {
             "p_name": "KidFitApp",
             "p_date": "2014-11-01",
             "purpose": "Personal",
             "url": "http://kidfitapp.com",
-            "skills":[],
+            "skills":["NoSQL","Node.js","Foundation","HTML","CSS","AngularJS","Parse"],
             "details":[
                 "Project for Money 20/20 hackathon in Las Vegas, NV",
                 "Created using Node.js, AngularJS, Android SDK and Android Wear SDK",
@@ -137,6 +135,16 @@
                 "Gifts are rewarded to the child using ModoPayments API",
                 "Completed in 24 hours with a group of 2 developers and 1 designer",
                 "Won a prize worth about $5000.00USD"
+            ]
+        },
+        {
+            "p_name": "Tuneline",
+            "p_date": "2015-12-01",
+            "purpose": "Academic",
+            "url": null,
+            "skills":["Javascript","Ionic","Cordova","HTML","CSS","SQL","Android SDK", "Git", "React"],
+            "details":[
+
             ]
         }
     ],
@@ -168,7 +176,7 @@
     }, {
         "name": "Android SDK",
         "category": "Java",
-        "rating": 0.25
+        "rating": 0.4
     }, {
         "name": "AngularJS",
         "category": "Javascript",
@@ -266,9 +274,17 @@
         "category": "Relational Databases",
         "rating": 0.75
     }, {
-        "name": "Sublime Text",
-        "category": "Tools",
-        "rating": 0.7
+        "name": "React",
+        "category": "Javascript",
+        "rating": 0.25
+    }, {
+        "name": "Ionic",
+        "category": "Javascript",
+        "rating": 0.6
+    }, {
+        "name": "Cordova",
+        "category": "Javascript",
+        "rating": 0.5
     }],
 
     "hobbies": [{
