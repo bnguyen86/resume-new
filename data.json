@@ -125,7 +125,7 @@
             "p_name": "KidFitApp",
             "p_date": "2014-11-01",
             "purpose": "Personal",
-            "url": "http://kidfitapp.com",
+            "url": null,
             "skills":["NoSQL","Node.js","Foundation","HTML","CSS","AngularJS","Parse"],
             "details":[
                 "Project for Money 20/20 hackathon in Las Vegas, NV",
