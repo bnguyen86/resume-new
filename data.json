@@ -21,8 +21,8 @@
         "dept": "ICORD",
         "description":[
             "Maintained VoIP telephone system for the department using Cisco Unified Communications Manager",
-            "Served on building safety committee for 3 years, chaired for 5 months",
-            "Created a database in Excel for over 100 pieces of equipment in the building",
+            "Served on safety committee for 3 years and chaired for 5 months",
+            "Created an Excel database for over 100 pieces of equipment",
             "Supervised events held by external organizations that took place in the building"
         ]
     }, {
@@ -43,8 +43,8 @@
         "location": "Vancouver, B.C.",
         "dept": null,
         "description":[
-            "Advising clients and their families on different immigration options",
-            "Completing and submitting applications to Citizenship and Immigration Canada",
+            "Advised clients and their families on different immigration options",
+            "Completed and submitted applications to Citizenship and Immigration Canadaa",
             "Completed over 15 cases to date with a ~90% success rate"
         ]
     }, {
@@ -55,9 +55,12 @@
         "location": "Vancouver, B.C.",
         "dept": null,
         "description":[
-            "Developing websites and cloud applications for various clients on the Salesforce platform",
-            "Using Apex, Visualforce, Javascript to develop dynamic content for both internal and external use for by the client, and by our own company",
-            "Thoroughly testing each component we create by ensuring all test cases cover >75% of our code"
+            "Lead development and successfully delivered projects for several different clients",
+            "Deployed several custom customer support communities, which were built using Apex, Javascript, HTML within Salesforce",
+            "Delivered a custom CMS system for a multinational corporation",
+            "Also delivered many other business applications to clients, including custom reporting tools and dashboards",
+            "Extensive backend and frontend work in each of these projects",
+            "Thoroughly tested every component I created by ensuring all test cases cover >75% of our code"
         ]
     }],
 
@@ -114,7 +117,7 @@
             "p_name": "Personal Resume Page",
             "p_date": "2014-10-01",
             "purpose": "Personal",
-            "url": null,
+            "url": "http://ben-nguyen.com/resume",
             "skills":["AngularJS", "HTML", "Foundation", "Bootstrap","CSS","Javascript"],
             "details":[
                 "Personal home page with current resume",
@@ -141,10 +144,37 @@
             "p_name": "Tuneline",
             "p_date": "2015-12-01",
             "purpose": "Academic",
-            "url": null,
+            "url": "https://youtu.be/AyqE12KmLVo",
             "skills":["Javascript","Ionic","Cordova","HTML","CSS","SQL","Android SDK", "Git", "React"],
             "details":[
-
+                "Lead development of this mobile app for iOS/Android using Cordova and Ionic",
+                "Chronicles your life using recorded sounds and music by linking them to locations and points in time",
+                "Determined the architecture of the system, chose the framework that we used and set up the automated test suites",
+                "Developed the core audio recording functionality and UI"
+            ]
+        },
+        {
+            "p_name": "Friend Pay Splitter ",
+            "p_date": "2015-09-01",
+            "purpose": "Personal",
+            "url": null,
+            "skills":["NoSQL","Android SDK"],
+            "details":[
+                "Native Android app, developed in Android Studio",
+                "Helps groups of friends split the cost of gifts, trips, meals, etc.",
+                "Uses Couchbase Lite as the embedded database"
+            ]
+        },
+        {
+            "p_name": "Worker Monitoring System",
+            "p_date": "2016-01-01",
+            "purpose": "Academic",
+            "url": null,
+            "skills":["Javascript","NoSQL","HTML","CSS","SQL","Android SDK", "Git"],
+            "details":[
+                "A native Android app that runs on a standalone Android watch that monitors employee movements",
+                "Streams data to a server and NoSQL database",
+                "Currently in planning stages"
             ]
         }
     ],
